@@ -1,23 +1,19 @@
 import { createMachine, assign } from 'xstate';
 
 export const machine = createMachine({
-  /** @xstate-layout N4IgpgJg5mDOIC5QHpZgC4H0AOYBOsA9gHYCGANphKQJbkCemeYAtjcRPjvjYRAHQBVNHgCSEcmADEAZQwACdAAsw85mw755uPLwgBtAAwBdRKGyFYNdL2JmQAD0QAmAMwAWZ-wCMrw74BOQwAOZwA2APdggBoQekRvAHYAVn5IxIDvZPcAyOTw5wBfQtjUDG4CEgoqWgYmVnZOPAq9IRFxSVkFAFcRRRoWMAAvEjAjUyQQCysbEnsnBGdkxMT+YMNE5yz-RM9EsNj4hDCw935Dd09k4PdXSO9nYOLStCwdIjJKajpGdUauHStABChHQ-AAEqQOJIAMKEFgsKECGEqADGAGtRMQAGaEACCACNCN10MJ8FJxvZptZbPNEK4lj5kt5DK5khtgq5Eg9kodEGFkq5+M5ds4Aq4JQyiiUQGU3vgPtVvnU-ppmoC+PwQWDIdCwHCEUj+CiwBisbjCcTSSIKd4JuZLDS5pMFgzUlkWWyOVyeXyEMFOcKJYZkmFEq5gkEls9Za8KoqvrVfg01S1NdqIUjYfDERw2vhIbAAFKEdiQACyYAw7CgsApJipjtmdhdiFCYX47hOD0efnZ2T9pw7wWS4rCfhCnmlL3K7yqiZ+9Q0TTTAgzuok+pzRrJeELJbLEEr1eItdt9qmTdprf94U73ecvZDIfcfv2QoCAfCy1O7OC3hjOV43nGpF1VFcNTXUFMz1A1cwEXdCwAFUIA9iGPGxT1gAAxGgCHQKQHFgdBSHQMB+FIbEyLwAAKdlDAASikIC50+UCVRTCCeHTaCN2zQ080Q0hYBQtCMJrHC8OIylJmpZs6QQbwBW8YVvGCRJ-C7MJDBDP0v07IJggib9tIuQC41YpUkyXf51W4qCdSzLcBIEOR0AAJU4-AAAV7MI4jSPIyjqLonSmJYhUQOVZNlwBeytV4py4KNNzPNivBfN0PgZIdGZr1ABYlOZVT1M0k4dN5OJ+S7HwkiSZJBWZbxP3M2dIrY6KbNTSCEsc2Dt0EkRkMIGFmEC7zdAAN0ClFSIAdWsJRtX8kiyIoqj8FCxjmIs9qrLAry7KyhyYM3ZLBoLYSUNGsBxqmmalHmxbtRyy88udAqEmUkqNO8LSKrfcdhS7DkxQeQwwla+VKg66zwLi47+G87oCXIGhUVmsE4RxPCWEyvQVsC9aQvo8Ldph-aOPS1ckZRtGMcerGSGxXH8eyhtZKvD7HEQfI9JUqVMnyfI-tDKHgNhg7qZ65HUfRzGkfstzsZZvBEWbQm1uCzbSZ2tqKYXKnbJp2X6YVtmIGV5ncdI2xXrk-KecWDwvF8fw7hCcJIhiKrjjcVS2T7JYw3cRJxcsw2YuNmW6flxn+DEqtMKgCb4WwAiiNWoKNto3WIoN9io+6+LTbj0iE9LdCk5rVOWHT+2uZbT7nc8Hw-ECT2IiiP0glWEVtK2XYwn7sOZXzhNC66rjEdLhny4mmhprIzHa-TzXs5JsK9ehifOvho7Wln837uXxnV-QBv3qbp23Fbt2O-bb3AaFZwQcSUJMmcCHihlYg+Dgew48opw0OquRsV8FIAFpHx+kgakXIuR9jciMkkSI7hw57UjlPBGrRdwdDAOAp018FhLAjJ2P6I52RuFDAESqRx9hnHcKyccFwmH-mWBggue9QE9W1IQ+SN5wh+ncN4FSURaEiJuCyUMo8Zw72AVLaO8V1xJQGhAfhjsFi7GEZ+NYDxQ63FHK-S4nDd4gOlsoxK-UXLGjRJiHE+IiQkl3Bo7mhUYG+wFKsbS7hricg8G6AIpiFFG2LojFR1j4L5j3MJNCFZq5YVccQ3mgo1gilfmKCIywLiDluPwFI3JTifhuGw4JktQnT2BFYs6ajonDUTieWsuF8JJIUqGDsFxIinH-F-AMAQ9L-h8FETwf0shbH8GUymRdKk8T6jUmxqVDoW1aTeFkkYgy0OZCscMXJXB+muB2Xw2QIbqV2FKSZWD940wifMqJQkRIjTGmRBeS99SMwWsoPhnMIGrKSF4cIERDCPF8Qct8Rl+AeHWAGG4IZkgXMnlcmOcs57oBWc3JIYYmSGE-OKSIQLNh+gnD4EU1xPAeFEdOWM+szGKLCYfWOKKkbMEmrwXolZYCwFIDAeA3yiEKWaqcWq1x+6bN8c4Ql6lOz9iUikR8iDXDwu4RYmeDKFYq1ZvZNFTs1IBG8csHIYZ8g3AOL7S48CmHYtKmsoyCqx7kxpRUnBmoj7xwtlbHGatbbcwdm4hI7CsU4ruEw9J+z9jCm-IKCGmwQxBLtdSkJ0ynUCBdeXBpydz5asKuKQwaQlibFDo+DIEM9KhmFJkbpo52zqUVeYpRKrkXH0Xg9UiGbeUCPRUZAI5wuQaTCEpJIHgTX0IZPwMMak+0VQ0qOH+hQgA */
-  id: "/set_personal_daily_reminder_period",
+  /** @xstate-layout N4IgpgJg5mDOIC5QHpZgC4H0CuaBOm6AlgLZgBeA9gHZgB0AqvgJIQA2YAxAMoYAEuMHj7EyVWgG0ADAF1EoAA6VYRYjXkgAHogBMAZgBsARjo6AHHoDsZgCw6dlqXpsGANCACeiI5YCsdAE4goLMLKQCjHRs9AF8Y91QMHHxCUgoaegAhSnQ6AAkAQ2p2MABhShISIog6UoALMABjAGtmagAzSgBBACNKbHQmIU5pOSQQJRU1ag1tBD0HQMsDX1WzIykpFaN3LwQVvVNLOwC9M4WjILiEtCxBAlF02jps3MLijnLK6tqGlrbOr1+oN8CMjGNFMpVER1OM5gtLEsVmsNltfDtPIhQod9HopL4DJY9GYAlIdAZriBEncUo9xFkcvlqp8KlViox8IVYAApShEWgQACyYAw-KgsBGsg0k2hsNAcws-mWOiCxwCBik1gCu0QBhcdDMvlOBjxUlsOh8lOpySEqTEGRejPeJS+bJqQzwXN5-MgwtF1HFYIhEyh01mWL0SoMKoCao1Wp1CGWhwCoXJvmWNl8ZqMVtuNoeaXpjrezLKrJ+Hq5ABVKN7qH7iAHYAAxIh4WDoTiaTsFdD0Artft4AAU2akAEpONb7nangzSx9y992VWCrBa-XG2LW+3O6NpaGYTM4d4DCalhEfITDL4bNrMQg03R72aDAF0xr8XmkrO6Q7XiZJdXR+XgQSEasiwybte37OhB2HMdNinGdaSg55AOdFkVxqMCPUg+1JClcYZTDU8ECMc8U0sK9liJFZ70TPUDDoIwfB8VZIzY2MfxpW1-wwp0yxA1dOXXWtSjwMA+zAAAFPAiAANxk+o+wAdVUOpXhg9AZPgochCQydp3zP90IXICXQrUShBrShJOk-t5KUlS6nUzTXgPEijzlLQzwvWNaJvBiHz2ZNTBcTUzBVSItl4gs52LWTsB6NgiEaVTcgI+dyg6dsqmmHS9IQwzxxQ0y0MI+hktS9LMrobL6Vy9p8r7Y8vMhKZj3DBBfB0RN1joBYYr6vqjCzCl4ipCr+PMugarSjK3Ky8ywOa1rCp7XS4JK0cypM39KvneaUsW+rGoyNaaBavACva4jOtlE95V0QwTHMKxzQcJwXCY-RTCMSM8VGwkbEseKzKqk7aqWvs6C3EUmygeSKgULstuKgy9uQg6+MLKGFrq5b4b5BtEbFFGSDRjqQy63y5n0YxTAsaw7G+5w3EfUlEQcDULWOaM6Iho6ktOom4ec5T+0yym0aKnasaM8rDtmgmxdh3JJdcvtZfQGnSO68jGfelmvscDnE3CqJ42iiIdDiylqEoCA4A0VDVfnQ86eevyEAAWnsRM-f8YJTkNM5jCJBZhY94sPVYDgvaenqdFWGwDUsPxzEo-RTkto06DTwl7CzY0zBj-HjteJOyJehByUTGw2JfEkMxJSwHBsMGK8SgChOA6yIBrw26+ORvUwNSJogcXxDU1Qke4EiysOXN1fiaVoOm6PoBg9Yf6e8QPHxWRENSzbFnAWDNF7mzDhMHjlbPXetfXJ5t959uYjRMJwLTJY59DogxHsbYrESQrDMJsAIfVlg3yhnfAeOFH6enEnWUm25mxtg7OgD+PUMw6DoGiM00DoHvl8HoAag1xrmnGkYMaUgbBwKrv3KySC8L4AurQXB5E2JSBMKHQkqZ7xmEsImWeLFAZ3i2CI440cpru0rsWBBrC15rg3PZKSMktbS2WhpdAWkcjcLrmxaKhcHB4hETYCwZwzCWyZqSQweIu45mvvImaiiHSEw1kY32PgzAsScSaLMxJDAGFsY+U0rFeZ8PHHQxhbiVYeOeF4+q8kwCKRhLgYUsBYAFBgPAby3seqXFMSqGKTg-B8JsImYkiIsz4kolnGMRImGixhudcy61bptV8gbA+FF250BNDRZETg7yGkblmQINgoEiL4WafxsQEl417sk9WHSqpXTyt02utNk48IsOnQJzhyEWHPOEvYGYWL2GRHiYu+IAitM8es4mCN-TIzwKjHBhT9nGICHYQuhpQj4nIZGC0A0CSmAiHqQ0qZyQiKeWs9pxNtFlGWrrHxcwjCWNMJsFwQTzwzN8JbckhCGn-P0BadEk04hAA */
+  id: "/set_user_timezone",
   initial: "UserIdle",
   context: {
     userTimezone: null,
-    reminderPeriod: null, 
-    meetingTime: '2024-06-30T10:00:00Z', 
+    meetingTime: '2024-06-30T10:00:00Z', // base meeting time in UTC
   },
   states: {
     UserIdle: {
       on: {
-        "Set the reminder period": {
-          actions: 'setReminderPeriod',
-          target: "PublicChat.ConfirmPeriod"
-        },
         "Set user timezone": {
-          actions: 'setUserTimezone'
+          actions: 'setUserTimezone',
+          target: "PublicChat.TimezoneConfirmation"
         }
       }
     },
@@ -40,7 +36,7 @@ export const machine = createMachine({
             UserHasJoinedMeetings: {
               always: [
                 {
-                  target: "SetReminderPeriod",
+                  target: "SetUserTimezone",
                   cond: "userHasPrivateChatWithBot"
                 },
                 {
@@ -51,23 +47,23 @@ export const machine = createMachine({
             UserHasToJoinMeetingsFirst: {
               after: {
                 "500": {
-                  target: "#/set_personal_daily_reminder_period.PublicChat.JoinMeetingPrompt",
+                  target: "#/set_user_timezone.PublicChat.JoinMeetingPrompt",
                 }
               }
             },
-            SetReminderPeriod: {
-              entry: 'setReminder',
+            SetUserTimezone: {
+              entry: 'setUserTimezone',
               after: {
                 "500": {
-                  target: "#/set_personal_daily_reminder_period.PublicChat.PeriodSetConfirmation",
+                  target: "#/set_user_timezone.PublicChat.TimezoneSetConfirmation",
                 }
               },
-              description: "- Set reminder period for this User in this Public chat to <period> minutes.\n- Update scheduled reminders for today's daily meeting if the User participates in today's meeting"
+              description: "- Set timezone for this User in this Public chat.\n- Update scheduled reminders for today's daily meeting if the User participates in today's meeting"
             },
             UserHasToCreatePrivateChatWithBot: {
               after: {
                 "500": {
-                  target: "#/set_personal_daily_reminder_period.PublicChat.PrivateChatPrompt",
+                  target: "#/set_user_timezone.PublicChat.PrivateChatPrompt",
                 }
               }
             }
@@ -79,19 +75,19 @@ export const machine = createMachine({
       initial: "PreviousMessages",
       states: {
         PreviousMessages: {},
-        ConfirmPeriod: {
-          description: "\"/set_personal_daily_reminder <timezone>\"\n- <timezone> - a hours and minutes + by utc, etc: utc+3:30, utc-2:00",
+        TimezoneConfirmation: {
+          description: "\"/set_user_timezone <timezone>\"\n- <timezone> - the user's timezone, e.g. UTC+2.",
           after: {
             "500": {
-              target: "#/set_personal_daily_reminder_period.Bot.HandleCommand",
+              target: "#/set_user_timezone.Bot.HandleCommand",
             }
           }
         },
-        PeriodSetConfirmation: {
-          description: "Reply:\n\n\"OK, I'll remind you in our chat each meeting time corresponding to your timezone after the start of a daily meeting to reply to missed daily meeting questions.\"",
+        TimezoneSetConfirmation: {
+          description: "Reply:\n\n\"OK, I've set your timezone to <timezone>. I'll adjust reminders for our daily meetings accordingly.\"",
           after: {
             "500": {
-              target: "#/set_personal_daily_reminder_period.UserIdle",
+              target: "#/set_user_timezone.UserIdle",
             }
           }
         },
@@ -99,7 +95,7 @@ export const machine = createMachine({
           description: "Reply:\n\n\"You have to join daily meetings first!\n\nUse the /join command.\"",
           after: {
             "500": {
-              target: "#/set_personal_daily_reminder_period.UserIdle",
+              target: "#/set_user_timezone.UserIdle",
             }
           }
         },
@@ -107,7 +103,7 @@ export const machine = createMachine({
           description: "Reply:\n\n\"You should first create a Private chat with <bot> (it's me).\"",
           after: {
             "500": {
-              target: "#/set_personal_daily_reminder_period.UserIdle",
+              target: "#/set_user_timezone.UserIdle",
             }
           }
         }
